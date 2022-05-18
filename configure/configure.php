@@ -23,6 +23,8 @@ function custom_setup() {
 
 	// HTML 5 - Example : deletes type="*" in scripts and style tags
 	add_theme_support( 'html5', [ 'script', 'style' ] );
+    add_theme_support('post-thumbnails');
+
 
 	// REMOVE USELESS WP IMAGE SIZES
 	remove_image_size( '1536x1536' );
