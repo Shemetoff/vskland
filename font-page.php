@@ -12,11 +12,18 @@ get_header();
         <div class="container">
             <div class="banner__inner" style="background-image: url('<?php bloginfo('template_url'); ?>/assets/src/images/banner.jpg')">
                 <div class="banner__text">
-                    <h1>Хочешь <span>фирменный чехол</span><br>
-                        от Страхового Дома ВСК?</h1>
-                    <p>С QR-визиткой, чтобы легко и быстро<br>
-                        поделиться контактами</p>
-                    <a href="#orders" class="button button-primary mod">ЗАКАЗАТЬ ЧЕХОЛ</a>
+                    <h1><?php the_field('banner_title','options'); ?></h1>
+                    <p><?php the_field('banner_text','options'); ?></p>
+                    <a href="#orders" class="button button-primary md"><?php
+                        $link = get_field('banner_button');
+                        var_dump($link);
+                         if( $link ):
+                            $link_url = $link['url'];
+                            $link_title = $link['title'];
+                            ?>
+                            <a class="button" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                        <?php endif; ?>
+                    </a>
                 </div>
                 <div class="banner__img">
                     <img src="<?php bloginfo('template_url'); ?>/assets/src/images/img1.png" alt="">

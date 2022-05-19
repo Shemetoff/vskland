@@ -16,13 +16,14 @@
                 <a href="#" class="header__logo"><img src="<?php bloginfo('template_url'); ?>/assets/src/images/svg/logo.svg" alt=""></a>
                 <div class="header__toggler js-toggler"><img src="<?php bloginfo('template_url'); ?>/assets/src/images/svg/menu.svg" alt=""></div>
                 <div class="header__menu">
+
                     <nav>
-                        <ul>
-                            <li><a href="#">Фотографии</a> </li>
-                            <li><a href="#">Как оформить</a> </li>
-                            <li><a href="#">Оплата и доставка</a> </li>
-                        </ul>
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'menu-main',
+                            'container' => null
+                        )); ?>
                     </nav>
+
                 </div>
             </div>
         </div>
