@@ -14,16 +14,15 @@ get_header();
                 <div class="banner__text">
                     <h1><?php the_field('banner_title','options'); ?></h1>
                     <p><?php the_field('banner_text','options'); ?></p>
-                    <a href="#orders" class="button button-primary md"><?php
-                        $link = get_field('banner_button');
-                        var_dump($link);
-                         if( $link ):
-                            $link_url = $link['url'];
-                            $link_title = $link['title'];
-                            ?>
-                            <a class="button" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
-                        <?php endif; ?>
-                    </a>
+                    <?php $link = get_field('banner_button'); ?>
+                    <?php if( $link ):
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                    ?>
+                        <a href="#orders" class="button button-primary md">
+                            <?php echo esc_html( $link_title ); ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
                 <div class="banner__img">
                     <img src="<?php bloginfo('template_url'); ?>/assets/src/images/img1.png" alt="">
