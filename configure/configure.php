@@ -5,7 +5,7 @@ function _custom_theme_register_menu() {
     register_nav_menus(
         array(
             'menu-main' => __( 'Menu principal' ),
-            //'menu-footer' => __( 'Menu footer' ),
+            'menu-footer' => __( 'Menu footer' ),
         )
     );
 }
@@ -88,6 +88,9 @@ function clean_header() {
 	remove_action('wp_head', 'wp_enqueue_scripts', 1);
 }
 add_action('wp_enqueue_scripts', 'clean_header');
+
+add_filter( 'upload_mimes', 'svg_upload_allow' );
+
 
 /**
  * SVG Support
